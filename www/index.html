@@ -2,33 +2,68 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-<style>*{margin: 0;padding: 0;font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
+	<title>Document</title> 
+ <script src="jquery-1.11.0.min.js"></script>
+<script src="jquery-ui.js"></script>
+	<style>*{margin: 0;padding: 0;font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
 div.main2{ background: url(images/bg.jpg);width: 1024px; height: 748px;margin: 0 auto;}
 .taps {
 	display: block;width: 580px;padding: 30px   0;margin: 0 0 0 370px;
 }.taps ul li img{height: 80px;}
 .taps ul li{margin:10px 10px 0 0;float: left;display: block;}
 h2{color: #fff;}
+.cl{clear: both;}
+
+
+ 
 </style>
+<script>
+	$(document).ready(function(e) {
+
+		
+
+	$('.images img').draggable({
+      appendTo: "body",
+      helper: "clone"
+    });
+
+	$('.asd').droppable({
+							accept: ".images img",
+							drop: function( event, ui ) {
+							var img1=ui.draggable;
+							$(this).append(img1);
+							//$(this).children("img").css({'position':'absolute', 'left':event.pageX,'top':event.pageY})
+			}
+
+		});	});
+</script>
 </head>
 <body>
-	<div class="main2">
+	<div class="main2 ">
 	
-		<div class="taps">
+		<div class="taps ">
 			<h2>TAPS</h2> 
-			<ul>
-			<li><img src="images/1.jpg" alt=""></li>
-			<li><img src="images/2.jpg" alt=""></li>
-			<li><img src="images/3.jpg" alt=""></li>
-			<li><img src="images/4.jpg" alt=""></li>
-			<li><img src="images/5.jpg" alt=""></li>
-			<li><img src="images/5.jpg" alt=""></li>
-			<li><img src="images/4.jpg" alt=""></li>
-			<li><img src="images/3.jpg" alt=""></li>
-			<li><img src="images/2.jpg" alt=""></li>
-			<li><img src="images/1.jpg" alt=""></li>
+			<ul class="images">
+			<li class="ui-widget-content ui-corner-tr"><img src="images/1.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/2.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/3.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/4.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/5.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/5.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/4.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/3.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/2.jpg" alt=""></li>
+			<li class="ui-widget-content ui-corner-tr"><img src="images/1.jpg" alt=""></li>
 
-		</ul></div></div>
+		</ul>
+	 <div class="asd" style="width: 740px;
+height: 300px;
+background: rgba(0,0,0,0.5);
+/* float: right; */
+margin-top: 9px;
+position: absolute;
+margin: 196px 0 0 -88px;padding: 190px 0 0;">asdasd</div>
+	</div>
+	</div> 
 </body>
 </html>
